@@ -3,21 +3,35 @@
 
 <head>
     <title>Clicker Game</title>
-    <link href="css/main.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </head>
 
 <body>
     <h1>Welcome to Pog land!</h1><br>
-    <button>Click here!</button>
-    <p>Pog counter: 0</p>
+    <button class="poggerButton" onclick="clickPogger()">Click here!</button>
+    <p id="poggerPointsText">You have 0 Pogger Points</p>
     <button onclick="openShop()">Open Shop</button>
     <div class="modal" id="shop">
         <div class="modal-content">
-            <img src="pogger.png" alt="Pogger">
+            <div class="shopItem">
+                <img src="/pogger.png" alt="Pogger" width=250 height=100>
+                <p>Adds 1 pog per second.</p>
+                <p>Cost: 100 Pogger Points</p>
+                <p id="poggersAmount">You have: 0</p>
+                <button onclick="buyItem(100, 0)">Buy</button>
+            </div>
+            <div class="shopItem">
+                <img src="/pogger-potion.png" alt="Pogger Potion" width=100 height=100>
+                <p>Adds 5 pog per second.</p>
+                <p>Cost: 500 Pogger Points</p>
+                <p id="potionsAmount">You have: 0</p>
+                <button onclick="buyItem(500, 1)">Buy</button>
+            </div>
+            <button onclick="closeShop()">Close Shop</button>
         </div>
     </div>
 </body>
