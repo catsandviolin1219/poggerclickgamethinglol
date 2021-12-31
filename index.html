@@ -10,11 +10,19 @@
     <script src="/js/main.js"></script>
 </head>
 
-<body>
+<body onload="main()">
+    
     <h1>Welcome to Pog land!</h1><br>
     <button class="poggerButton" onclick="clickPogger()">Click here!</button>
-    <p id="poggerPointsText">You have 0 Pogger Points</p>
+    <button onclick="getPogger(100)">hax</button>
+    <p id="poggerPointsText">You have 0 Pogger Points (&Oslash;)</p>
     <button onclick="openShop()">Open Shop</button>
+    <div debug-info>
+        <button onclick="updateUI()">updateUI()</button>
+        <p>Warning: you may have to update the UI before you can view correct debug information.</p>
+        <p id="debug-inventory"></p>
+        <p id="debug-interval-id"></p>
+    </div>
     <div class="modal" id="shop">
         <div class="modal-content">
             <div class="shopItem">
@@ -30,6 +38,13 @@
                 <p>Cost: 500 Pogger Points</p>
                 <p id="potionsAmount">You have: 0</p>
                 <button onclick="buyItem(500, 1)">Buy</button>
+            </div>
+            <div class="shopItem">
+                <img src="/double-money.png" alt="Double Money Image" width=100 height=100>
+                <p>Doubles moeny for 30 seconds.</p>
+                <p id="doubleCost">Cost: 250 Pogger Points</p>
+                <p id="doubleMoneyActive">Currently Inactive</p>
+                <button onclick="activateDoubleMoney(250)">Activate</button>
             </div>
             <button onclick="closeShop()">Close Shop</button>
         </div>
